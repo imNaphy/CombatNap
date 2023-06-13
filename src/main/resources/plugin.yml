@@ -1,0 +1,15 @@
+name: CombatNap
+version: '${project.version}'
+main: me.naphy.combatnap.CombatNap
+api-version: 1.19
+author: naphy
+commands:
+  combatnap:
+    description: Main command of the plugin.
+    usage: /<command> <args>
+  combattimer:
+    description: Shows how much time are people still in combat.
+    usage: /<command>
+    aliases: ["timer"]
+  test:
+    usage: /<command>
