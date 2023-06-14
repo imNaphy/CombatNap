@@ -5,12 +5,18 @@ Combat time: 15
 Banning commands: true
 Banning teleport: false
 Banning exiting: false
+No permission: "&b[CombatNap] &7You don't have access to use this command!"
 Commands: "&c===================\n\n&bCommands available:\n  &a/combatnap toggle <on/off>\n  &a/combatnap reload\n\n&c==================="
 Plugin enabled: "&b[CombatNap] &7The plugin has been &aenabled&7!"
 Plugin already enabled: "&b[CombatNap] &7The plugin is already &aenabled&7!"
 Plugin disabled: "&b[CombatNap] &7The plugin has been &cdisabled&7!"
 Plugin already disabled: "&b[CombatNap] &7The plugin is already &cdisabled&7!"
 Invalid toggle: "&b[CombatNap] &7Invalid use of command. Please use &c/combatnap toggle <on/off>&7!"
+Not in combat: "&b[CombatNap] &7You are not in combat!"
+In combat: "&b[CombatNap] &7You are still in combat for &c%time% seconds&7!"
+Entered combat: "&b[CombatNap] &7You have been combat tagged by &c%attacker% &7for &c%time% seconds&7! Don't log out."
+Command during combat: "&b[CombatNap] &7You can't use this command during combat!"
+Out of combat: "&b[CombatNap] &7You are no longer in combat!"
 Banned commands:
   - spawn
   - back

@@ -1,0 +1,39 @@
+package me.naphy.combatnap;
+
+import me.naphy.combatnap.listeners.Combat;
+import org.bukkit.ChatColor;
+
+import java.util.ArrayList;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+import static me.naphy.combatnap.listeners.Combat.combatPlayers;
+
+public class Scheduler {
+    public static void main() {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                if (CombatNap.plugin.schedulerToggle) {
+                    for (Combat.AttackingInfo i : combatPlayers) {
+                        i.timeRemaining--;
+                        if (i.timeRemaining <= 0) {
+                            i.player.sendMessage(ChatColor.translateAlternateColorCodes('&', CombatNap.plugin.outOfCombat));
+                            if (combatPlayers.size() == 1) combatPlayers = new ArrayList<>();
+                            else combatPlayers.remove(i);
+                        }
+                    }
+                }
+            }
+        };
+        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+        service.scheduleAtFixedRate(runnable, 0, 1,TimeUnit.SECONDS);
+    }
+    // the toggle command switches off the boolean
+    // the scheduler verifies the boolean, if bool = true, continue the checkers
+    // if bool = false, stop checking anymore
+    // the scheduler won't stop, it'll go every second for eternity, until the plugin is unloaded (even then I don't think it stops
+    // might need to check with plugman)
+    // it'll just not do anything else if the bool is false
+}
