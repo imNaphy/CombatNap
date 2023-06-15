@@ -2,7 +2,6 @@ package me.naphy.combatnap;
 
 import me.naphy.combatnap.commands.CombatTimer;
 import me.naphy.combatnap.commands.Main;
-import me.naphy.combatnap.commands.test;
 import me.naphy.combatnap.listeners.Combat;
 import me.naphy.combatnap.listeners.Command;
 import me.naphy.combatnap.listeners.Exit;
@@ -43,7 +42,6 @@ public class CombatNap extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Teleport(), this);
         getCommand("combatnap").setExecutor(new Main());
         getCommand("combattimer").setExecutor(new CombatTimer());
-        getCommand("test").setExecutor(new test());
         Scheduler.main();
         getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[" + this.getName() + "] Plugin is now enabled!");
     }

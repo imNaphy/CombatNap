@@ -10,6 +10,4 @@ commands:
   combattimer:
     description: Shows how much time are people still in combat.
     usage: /<command>
-    aliases: ["timer"]
-  test:
-    usage: /<command>
+    aliases: ["timer", "ct"]
