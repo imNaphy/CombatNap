@@ -20,7 +20,7 @@ public class Scheduler {
                         i.timeRemaining--;
                         if (i.timeRemaining <= 0) {
                             i.player.sendMessage(ChatColor.translateAlternateColorCodes('&', CombatNap.plugin.outOfCombat));
-                            if (combatPlayers.size() == 1) combatPlayers = new ArrayList<>();
+                            if (combatPlayers.size() <= 1) combatPlayers = new ArrayList<>();
                             else combatPlayers.remove(i);
                         }
                     }
